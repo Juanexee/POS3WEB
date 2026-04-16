@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Restaurante</title>
+</head>
+<body>
+
+    <aside>
+        <div class="perfil">
+            <img src="user-icon.png" alt="Usuario">
+            <p>user1</p>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">🏠 Inicio</a></li>
+                <li><a href="#">📁 Categorías</a></li>
+                <li><a href="#">🍔 Productos</a></li>
+                <li><a href="#">🪑 Mesas</a></li>
+                <li><a href="#">👥 Personal</a></li>
+                <li><a href="#">🍳 Cocina</a></li>
+                <li><a href="#">📄 Facturas</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+   <main>
+    <header>
+        <h1>Lista de Categorías</h1>
+        
+        <div class="herramientas">
+            <button class="btn-agregar" title="Agregar Categoría">
+                <span>+</span>
+            </button>
+
+            <div class="contenedor-buscar">
+                <label for="buscar">Buscar</label>
+                <div class="input-busqueda">
+                    <input type="text" id="buscar" placeholder="Buscar aquí...">
+                    <span>🔍</span>
+                </div>
+            </div>
+        </div>
+    </header>
+<section id="modulo-categorias">
+    <header>
+        <h1>Lista de Categorías</h1>
+        
+        <div class="herramientas">
+            <button id="btn-abrir-modal" class="btn-primary">+</button>
+
+            <div class="buscador">
+                <label>Buscar</label>
+                <input type="text" id="input-buscar" placeholder="Buscar categoría...">
+            </div>
+        </div>
+    </header>
+
+    <table id="tabla-categorias">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="cuerpo-tabla">
+            <tr>
+                <td>1</td>
+                <td>Alitas</td>
+                <td>
+                    <button class="btn-edit">✏️</button>
+                    <button class="btn-delete">🗑️</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<div id="modal-categoria" class="modal">
+    <div class="modal-content">
+        <header>
+            <img src="logo.png" alt="Logo">
+            <h3>Agrega las Categorías</h3>
+        </header>
+
+        <form id="form-categoria">
+            <div class="campo">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre-categoria" name="nombre" required>
+            </div>
+
+            <div class="botones">
+                <button type="submit" id="btn-guardar">Guardar</button>
+                <button type="button" id="btn-salir">Salir</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="modal-confirmacion-eliminar" class="modal-overlay">
+    <div class="modal-alerta">
+        <header class="modal-alerta-header">
+            <div class="icono-pregunta">?</div>
+        </header>
+        
+        <div class="modal-alerta-body">
+            <p>¿Está seguro de que desea eliminar?</p>
+        </div>
+        
+        <footer class="modal-alerta-footer">
+            <button id="btn-confirmar-si" class="btn-confirmar">Yes</button>
+            <button id="btn-confirmar-no" class="btn-cancelar">No</button>
+        </footer>
+    </div>
+</div>
+   
+    
+</main>
+
+</body>
+</html>
