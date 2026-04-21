@@ -1,22 +1,40 @@
-
-
-/* 1. CONFIGURACIÓN GENERAL */
+/* ============================================================
+   1. CONFIGURACIÓN GENERAL Y LAYOUT (Base de todo el sitio)
+   ============================================================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   
 }
 
 body {
     display: grid; 
     grid-template-columns: 1fr; 
     min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 2 Columnas para pantallas grandes (Escritorio) */
+@media (min-width: 768px) {
+    body {
+        grid-template-columns: 250px 1fr;
+    }
+    aside {
+        min-height: 100vh;
+    }
+}
+
+main {
+    padding: 20px;
+    background-color: #ffffff; /* Fondo blanco general */
 }
 
 
+/* ============================================================
+   2. MENÚ LATERAL (Sidebar - aside.html)
+   ============================================================ */
 aside {
-   background-color: #ff6b00; 
+    background-color: #ff6b00; 
     color: white;
     padding: 20px;
 }
@@ -50,103 +68,43 @@ aside nav ul li a {
     transition: 0.3s;
 }
 
-aside nav ul li a:hover {
+aside nav ul li a:hover,
+aside nav ul li a.active {
     background-color: rgba(255, 255, 255, 0.2);
+    border-left: 4px solid white;
+    padding-left: 15px;
 }
 
-/*CONTENIDO PRINCIPAL (MAIN) */
-main {
-    padding: 20px;
-}
 
-/* 3. MEDIA QUERY: Cuando la pantalla sea más grande que una Tablet (768px) */
-@media (min-width: 768px) {
-    body {
-        /* Cambiamos a 2 columnas: el Aside ocupa 250px y el Main el resto */
-        grid-template-columns: 250px 1fr;
-    }
-    
-    aside {
-        min-height: 100vh; /* El menú ocupa todo el alto de la pantalla */
-    }
-}
+/* ============================================================
+   3. COMPONENTES COMUNES (Botones, Tablas, Buscadores)
+   ============================================================ */
 
+/* Encabezados de Sección */
 header h1 {
     color: #333;
     margin-bottom: 20px;
+    justify-content: space-between; 
 }
 
-.fila-formulario {
-    display: flex;
-    gap: 15px; /* Espacio entre los campos */
-    flex-wrap: wrap; /* Si no caben, el segundo baja automáticamente */
-}
-
-.campo {
-    flex: 1; /* Hace que los campos crezcan por igual */
-    min-width: 200px; /* Si la pantalla es muy pequeña, se apilan */
-}
-
+/* Herramientas */
 .herramientas {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: center;
     margin-bottom: 30px;
 }
 
-/* BOTÓN AGREGAR (+) */
-.btn-primary {
-    background-color: #6f42c1; 
-    color: white;
-    border: none;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    font-size: 24px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-/* 1. Agrega espacio interno al formulario */
-#form-platillo {
-    padding: 25px;
-}
-
-/* 2. Alineación de los botones Guardar y Salir */
-.botones-acciones {
-    display: flex;
-    justify-content: flex-end; /* Los mueve a la derecha */
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.btn-guardar {
-    background-color: #6f42c1; /* Púrpura */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.btn-salir {
-    background-color: #e0e0e0; /* Gris claro */
-    color: #333;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-/* BUSCADOR */
+/* Buscador */
 .input-busqueda {
     display: flex;
     align-items: center;
+    margin-left: auto;
     background: white;
     padding: 10px;
     border-radius: 20px;
     border: 1px solid #ddd;
+    width: fit-content;
 }
 
 .input-busqueda input {
@@ -155,7 +113,7 @@ header h1 {
     padding-left: 10px;
 }
 
-/* 4. TABLA PROFESIONAL */
+/* Tablas Profesionales (Categorias.html / Platillo.html) */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -165,44 +123,32 @@ table {
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-thead {
-    background-color: #1e3a8a; 
-    color: white;
-}
-/* Efecto cebra: las filas pares (even) tendrán un fondo gris muy claro */
-tbody tr:nth-child(even) {
-    background-color: #f9fafb;
-}
+thead { background-color: #1e3a8a; color: white; }
+th, td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+tbody tr:nth-child(even) { background-color: #f9fafb; }
+tbody tr:hover { background-color: #f3f4f6; }
 
-/* Efecto al pasar el mouse sobre una fila */
-tbody tr:hover {
-    background-color: #f3f4f6;
-}
-th, td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-}
+/* Botones de Acción */
+.btn-primary { background-color: #6f42c1; color: white; border: none; width: 45px; height: 45px; border-radius: 50%; font-size: 24px; cursor: pointer; }
+.btn-guardar { background-color: #6f42c1; color: white; border: none; padding: 10px 30px; border-radius: 8px; font-weight: bold; cursor: pointer;justify-content: center; margin-top: 40px;margin-bottom: 10px;}
+.btn-salir { background-color: #e0e0e0; color: #333; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;justify-content: center; margin-top: 40px;margin-bottom: 10px; }
+.btn-edit { background-color: #1e90ff; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; }
+.btn-delete { background-color: #dc3545; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; }
 
-/* 5. MODALES (VENTANAS EMERGENTES) */
+
+/* ============================================================
+   4. MODALES Y FORMULARIOS (Platillo.html / Categorias.html)
+   ============================================================ */
 .modal-overlay {
-   position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
-    display: flex; /* Para centrar el contenido */
-    justify-content: center;
-    align-items: center;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex; justify-content: center; align-items: center;
     z-index: 1000;
 }
 
 .modal-content {
-    background: white;
-    width: 450px;
-    border-radius: 15px;
-    overflow: hidden;
+    background: white; width: 450px; border-radius: 15px; overflow: hidden;
     animation: slideDown 0.3s ease-out;
 }
 
@@ -211,41 +157,94 @@ th, td {
     to { transform: translateY(0); opacity: 1; }
 }
 
-.modal-header {
-    background-color: #ff6b00; /* Fondo naranja del modal */
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
+.modal-header { background-color: #ff6b00; color: white; padding: 15px; text-align: center; }
+.modal-body { padding: 15px; }
 
-.modal-body {
-    padding: 25px;
-}
-
-/* ESTILO DE LA CAJA DE SUBIDA (EL ICONO 📦) */
+/* Subida de Imagen (Icono Caja 📦) */
 .upload-box {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background-color: #ffb142; color: white; width: 100px; height: 100px;
+    border-radius: 15px; cursor: pointer;
+}
+
+
+/* ============================================================
+   5. MÓDULO DE MESAS (Mesas.html)
+   ============================================================ */
+.grid-mesas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.mesa {
+    background: white; border-radius: 20px; padding: 25px; text-align: center;
+    border: 2px solid transparent; transition: all 0.3s ease;
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+
+.numero-mesa { font-size: 3rem; font-weight: 800; line-height: 1; }
+.nombre-mesa { font-weight: bold; color: #1e3a8a; }
+.tag-estado { padding: 5px 15px; border-radius: 20px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; border: 1px solid; }
+
+/* Estados de las Mesas */
+.mesa.disponible { border-color: #2ecc71; box-shadow: 0 0 20px rgba(46, 204, 113, 0.2); }
+.mesa.disponible .numero-mesa { color: #2ecc71; }
+.mesa.disponible .tag-estado { color: #2ecc71; border-color: #2ecc71; }
+
+.mesa.ocupada { border-color: #e67e22; box-shadow: 0 0 20px rgba(230, 126, 34, 0.2); }
+.mesa.ocupada .numero-mesa { color: #e67e22; }
+.mesa.ocupada .tag-estado { color: #e67e22; border-color: #e67e22; }
+
+/* Info de Sesión Activa (Tiempo/Dinero) */
+.info-sesion { width: 100%; margin-top: 10px; padding-top: 10px; border-top: 1px dashed #e67e22; }
+.tiempo-alerta { color: #dc3545 !important; animation: pulse-alert 2s infinite; }
+
+@keyframes pulse-alert { 0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; } }
+
+
+/* ============================================================
+   6. MÓDULO DE COCINA (KDS - Cocina.html)
+   ============================================================ */
+.contenedor-kds {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
+    gap: 15px;
+    padding: 20px;
+}
+
+.tarjeta-cocina {
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    overflow: hidden;
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #ffb142; /* Naranja más suave como el del video */
-    color: white;
-    width: 100px; /* Ancho fijo */
-    height: 100px; /* Alto fijo */
-    border-radius: 15px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background 0.3s;
-}
-.upload-box .icon-box {
-    font-size: 30px; /* Tamaño del icono 📦 */
-    margin-bottom: 5px;
-}
-.upload-box:hover {
-   background-color: #ff6b00; /* Se oscurece al pasar el mouse */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-/* Contenedor que organiza las tarjetas en columnas automáticas */
+.kds-badge {
+    position: absolute; top: 8px; right: 8px;
+    background: #333; color: white; width: 35px; height: 35px;
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    font-weight: bold;
+}
+
+.kds-cuerpo { padding: 15px; }
+.kds-cuerpo h2 { font-size: 1rem; color: #1e3a8a; margin-right: 40px; }
+.kds-tiempo { font-size: 1.2rem; font-weight: 700; margin: 8px 0; color: #555; }
+.btn-despachar { background: #ff6b00; color: white; border: none; padding: 10px; font-weight: bold; width: 100%; cursor: pointer; }
+
+/* Semáforos KDS (Borde Superior Sutil) */
+.alerta-verde { border-top: 6px solid #2ecc71; }
+.alerta-amarilla { border-top: 6px solid #f1c40f; }
+.alerta-roja { border-top: 6px solid #e74c3c; }
+
+
+/* ============================================================
+   7. MÓDULO DE INICIO / DASHBOARD (inicio.html)
+   ============================================================ */
 .contenedor-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -253,37 +252,9 @@ th, td {
     margin-top: 30px;
 }
 
-/* Estilo individual de cada tarjeta */
 .card {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    background: white; padding: 20px; border-radius: 15px;
+    display: flex; align-items: center; gap: 20px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border-left: 5px solid #ff6b00; /* Detalle naranja como tu sidebar */
-}
-
-.card-icono {
-    font-size: 2.5rem;
-}
-
-.card-contenido h3 {
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 5px;
-}
-
-.dato-principal {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-}
-
-/* Estilo para el enlace de la página actual */
-aside nav ul li a.active {
-    background-color: rgba(255, 255, 255, 0.3); /* Un fondo blanco sutil */
-    border-left: 4px solid white; /* Una línea blanca a la izquierda */
-    padding-left: 15px; /* Ajustamos el espacio para la línea */
+    border-left: 5px solid #ff6b00;
 }
