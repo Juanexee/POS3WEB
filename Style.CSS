@@ -1,0 +1,240 @@
+/* --- ESTILOS GENERALES --- */
+* { 
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', sans-serif;
+}
+body { 
+    background-color: #fdfdfd;
+    padding-bottom: 80px; 
+}
+.bg-dark {
+background-color: #000; 
+color: white;
+}
+.container { 
+    padding: 20px;
+}
+.product-link {
+    text-decoration: none; 
+    color: inherit;
+    display: block;
+}
+.title-white {
+margin-bottom: 15px; 
+}
+
+/* --- PANTALLA INICIO --- */
+.header-app {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px; }
+.search-container {
+    background: #f1f1f1;
+    padding: 10px 15px; 
+    border-radius: 20px;
+    display: flex;
+    width: 80%; }
+.search-container input { border: none; background: transparent; margin-left: 10px; outline: none; }
+
+.promo-card { background: #1a1a1a; color: white; border-radius: 25px; padding: 25px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+.tag { color: #ffc107; font-size: 12px; font-weight: bold; }
+
+.grid-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px; /* Un poco menos de espacio para que las tarjetas respiren */
+    align-items: start;
+}
+.food-item {
+    background: #1a1a1a;
+    border-radius: 20px;
+    padding: 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre imagen y texto */
+    min-height: 280px; /* Le damos un mínimo para que todas sean iguales */
+}   
+.food-item img {
+    width: 100%;
+    height: 200px; /* Subimos de 150px a 200px para que se vea más */
+    object-fit: cover; /* Mantiene la proporción sin estirar */
+    object-position: center; /* Centra la foto para que no se vea solo el pan */
+    border-radius: 15px;
+    display: block;
+}
+.food-details {
+    text-align: left;
+}
+.food-details p { 
+    color: #ffc107;
+    font-weight: bold;
+}
+.add-indicator {
+    position: absolute;
+    bottom: 10px;
+    right: 10px; 
+    background: #ffc107;
+    color: black;
+    width: 25px; 
+    height: 25px;
+    border-radius: 8px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    font-weight: bold;
+}
+.fav-btn { 
+    position: absolute; 
+    top: 10px;
+    right: 10px;
+    background: transparent; border: none;
+}
+
+/* --- PANTALLA DETALLE --- */
+.centered {
+    text-align: center; 
+    }
+.product-large-img img { 
+    width: 250px; 
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15)); 
+    margin: 20px 0;
+}
+.detail-price { 
+    font-size: 2.2rem;
+    color: #FFC107;
+    margin: 15px 0; 
+    }
+.qty-selector-detail { 
+    display: flex;
+    justify-content: center; 
+    align-items: center; gap:
+    20px; margin: 15px 0;
+}
+.qty-circle {
+    width: 40px;
+    height: 40px; 
+    border-radius: 50%; 
+    border: 1px solid #ddd;
+    background: white; 
+    font-size: 1.2rem; 
+    }
+.qty-num { 
+    font-size: 1.3rem; 
+    font-weight: bold; 
+}
+
+/* --- PANTALLA OPCIONES EL GRID --- */
+.ingredient-item {
+    display: grid;
+    grid-template-columns: 50px 1fr auto;
+    align-items: center;
+    gap: 15px; 
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    }
+.small-product-info {
+    display: flex; 
+    align-items: center; gap: 15px;
+    }
+
+/* --- BOTONES --- */
+.btn-yellow {
+    display: block; 
+    background: #FFC107; 
+    color: black;
+    text-align: center; 
+    padding: 18px; 
+    border-radius: 50px; 
+    text-decoration: none; 
+    font-weight: bold;
+    margin-top: 10px; 
+    border: none; 
+    width: 100%; 
+    }
+.btn-outline { 
+    display: block; 
+    border: 1px solid #ccc; 
+    text-align: center;
+    padding: 18px; 
+    border-radius: 50px; 
+    text-decoration: none; 
+    color: #666; 
+    margin-bottom: 10px; 
+    }
+.btn-order {
+    width: 100%; 
+    background: black; 
+    color: white; 
+    padding: 18px;
+    border-radius: 15px; 
+    border: none;
+    font-weight: bold; 
+    margin-top: 20px; 
+    }
+
+/* --- NAV INFERIOR --- */
+.bottom-nav {
+position: fixed; 
+bottom: 0; 
+width: 100%; 
+background: white; 
+height: 65px; 
+display: flex; 
+justify-content: space-around; 
+align-items: center;
+box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+.bottom-nav a { 
+    text-decoration: none; 
+    font-size: 24px; 
+}
+
+/* Estilos para que el carrito se vea ordenado */
+/* Esto es algo nuevo para que se vea mejor en el carrito*/
+.cart-item {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.item-img img {
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.item-info { flex-grow: 1; }
+
+.item-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.qty-btn {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+}
+
+/* Algo nuevo del menu que a dividido */
+.category-title {
+    margin-top: 30px; /* Esto da espacio entre secciones */
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-left: 5px;
+}
