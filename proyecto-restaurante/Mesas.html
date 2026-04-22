@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MESAS</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+
+<body>
+    <aside>
+        <div class="perfil">
+            <img src="IMG/USER1.png" alt="Usuario">
+            <p>user1</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="inicio.html">🏠 Inicio</a></li>
+                <li><a href="Categoria.html">📁 Categorías</a></li>
+                <li><a href="Platillo.html" >🍔 Platillos</a></li>
+                 <li><a href="Mesas.html" class="active">🪑 Mesas</a></li>
+                <li><a href="Personal.html">👥 Personal</a></li>
+                <li><a href="Cocina.html">🍳 Cocina</a></li>
+                <li><a href="#">📄 Facturas</a></li>
+            </ul>
+        </nav>
+    </aside>
+    
+
+    <main>
+        
+      <section id="modulo-mesas">
+        
+         <header>
+           <h1>Mapa de Mesas</h1>
+         
+         </header>
+            
+      </section>
+
+      <div id="contenedor-plano-mesas" class="grid-mesas">
+    
+    <div class="mesa disponible" data-mesa-id="1">  
+        <div class="numero-mesa">1</div> 
+        <div class="nombre-mesa">Mesa 1</div>
+        <div class="tag-estado">LIBRE</div>
+        <p class="mensaje-estado">LISTA PARA SERVICIO</p>
+    </div>
+
+    <div class="mesa ocupada" data-mesa-id="2" data-sesion-id="105">
+        <div class="numero-mesa">2</div> 
+        <div class="nombre-mesa">Mesa 2</div>
+        <div class="tag-estado">OCUPADA</div>
+        
+        <div class="info-sesion">
+            <div class="detalle-info">
+                <span class="label">Tiempo:</span>
+                <span class="valor tiempo-alerta">32 min</span>
+            </div>
+            <div class="detalle-info">
+                <span class="label">Consumo:</span>
+                <span class="valor">$450.00</span>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<div class="modal-overlay" id="modal-cambio-mesa" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>🔄 Cambiar de Mesa</h2>
+        </div>
+        <div class="modal-body">
+            <form id="form-cambio-mesa">
+                <div class="campo">
+                    <label>Mesa Actual:</label>
+                    <input type="text" id="mesa-origen-display" value="Mesa 2" disabled>
+                    <input type="hidden" id="mesa-origen-id">
+                </div>
+
+                <div class="campo" style="margin-top: 15px;">
+                    <label>Seleccionar Mesa Destino:</label>
+                    <select id="mesa-destino-id" class="input-moderno">
+                        <option value="">-- Seleccione una mesa libre --</option>
+                        <option value="1">Mesa 1 (Libre)</option>
+                        <option value="3">Mesa 3 (Libre)</option>
+                        <option value="4">Mesa 4 (Libre)</option>
+                    </select>
+                </div>
+
+                <div class="botones-acciones">
+                    <button type="button" class="btn-salir" onclick="cerrarModalCambio()">Cancelar</button>
+                    <button type="submit" class="btn-guardar">Confirmar Cambio</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+
+    
+  
+    </main>
+    
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocina</title>
+     <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <aside>
+        <div class="perfil">
+            <img src="IMG/USER1.png" alt="Usuario">
+            <p>user1</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="inicio.html">🏠 Inicio</a></li>
+                <li><a href="Categoria.html">📁 Categorías</a></li>
+                <li><a href="Platillo.html" >🍔 Platillos</a></li>
+                 <li><a href="Mesas.html">🪑 Mesas</a></li>
+                <li><a href="Personal.html">👥 Personal</a></li>
+                <li><a href="Cocina.html" class="active">🍳 Cocina</a></li>
+                <li><a href="#">📄 Facturas</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+<main>
+    <section id="modulo-cocina">
+    <header class="kds-header">
+        <h1>COCINA</h1>
+        <div class="reloj-servidor">21:45</div>
+    </header>
+
+    <div class="contenedor-kds">
+        <div class="tarjeta-cocina alerta-roja">
+            <div class="kds-badge">x5</div>
+            <div class="kds-cuerpo">
+                <h2>HAMBURGUESA CLÁSICA</h2>
+                <p class="kds-tiempo">RETRAZO: 22:15 min</p>
+                <p class="kds-mesas">Mesas: 1, 4, 8</p>
+            </div>
+            <button class="btn-despachar" onclick="actualizarEstadoMasivo(['ID1','ID2','ID3'])">
+                ACEPTAR GRUPO
+            </button>
+        </div>
+
+        <div class="tarjeta-cocina alerta-verde">
+            <div class="kds-badge">x2</div>
+            <div class="kds-cuerpo">
+                <h2>ALITAS BBQ</h2>
+                <p class="kds-tiempo">NORMAL: 08:30 min</p>
+                <p class="kds-mesas">Mesa: 2</p>
+            </div>
+            <button class="btn-despachar">ACEPTAR GRUPO</button>
+        </div>
+    </div>
+</section>
+</main>
+    
+</body>
+</html>
