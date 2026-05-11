@@ -32,10 +32,21 @@
         
       <section id="modulo-mesas">
         
+        
+
          <header>
-           <h1>Mapa de Mesas</h1>
-         
-         </header>
+                <h1>Mapa de Mesas</h1>
+                <div class="herramientas">
+                    <button id="btn-agregar-platillo" class="btn-primary" title="Agregar Platillo">+</button>
+
+                    <div class="contenedor-buscar">                        
+                       <div class="input-busqueda">
+                            <span>🔍</span>
+                            <input type="text" id="input-buscar-platillo" placeholder="Buscar...">
+                       </div>
+                    </div>
+                </div>
+            </header>
             
       </section>
 
@@ -67,9 +78,41 @@
 
 
 </div>
-<div class="modal-overlay" id="modal-cambio-mesa" style="display: none;">
+<div class="modal-overlay" id="modal-cambio-mesa" style="display: flex;">
     <div class="modal-content">
         <div class="modal-header">
+            <h2>🔄 Cambiar de Mesa</h2>
+        </div>
+        <div class="modal-body">
+            <form id="form-cambio-mesa">
+                <div class="campo">
+                    <label>Mesa Actual:</label>
+                    <input type="text" id="mesa-origen-display" value="Mesa 2" disabled>
+                    <input type="hidden" id="mesa-origen-id">
+                </div>
+
+                <div class="campo" style="margin-top: 15px;">
+                    <label>Seleccionar Mesa Destino:</label>
+                    <select id="mesa-destino-id" class="input-moderno">
+                        <option value="">-- Seleccione una mesa libre --</option>
+                        <option value="1">Mesa 1 (Libre)</option>
+                        <option value="3">Mesa 3 (Libre)</option>
+                        <option value="4">Mesa 4 (Libre)</option>
+                    </select>
+                </div>
+
+                <div class="botones-acciones">
+                    <button type="button" class="btn-salir">Cancelar</button>
+                    <button type="submit" class="btn-guardar">Confirmar Cambio</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal-overlay2" id="modal-agreagar-mesa" style="display: none;">
+    <div class="modal-content2">
+        <div class="modal-header2">
             <h2>🔄 Cambiar de Mesa</h2>
         </div>
         <div class="modal-body">
