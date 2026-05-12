@@ -1,4 +1,4 @@
-/* RESET Y FUENTE */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@
     font-family: 'Inter', -apple-system, sans-serif;
 }
 
-/* FONDO  */
+
 .login-body-bg {
     background: linear-gradient(180deg, #e68d61 0%, #ffffff 100%);
     min-height: 100vh;
@@ -15,14 +15,13 @@
     align-items: center;
 }
 
-/* CONTENEDOR PRINCIPAL */
 .login-wrapper {
     width: 100%;
     max-width: 420px;
     padding: 20px;
 }
 
-/* TARJETA */
+
 .login-card {
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px); /* Desenfoque del fondo */
@@ -33,7 +32,7 @@
     border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-/* CABECERA Y LOGO */
+
 .logo-container {
     background: white;
     width: 70px;
@@ -62,7 +61,7 @@
     margin-bottom: 30px;
 }
 
-/* INPUTS */
+
 .input-group {
     text-align: left;
     margin-bottom: 15px;
@@ -87,14 +86,14 @@
 }
 
 .input-group input:focus {
-    border-color: #8d491e; /* El color café de La Mimi */
+    border-color: #8d491e; 
     box-shadow: 0 0 0 4px rgba(141, 73, 30, 0.1);
 }
 
-/* BOTÓN PRINCIPAL */
+
 .btn-get-started {
     width: 100%;
-    background: #1a1a1a; /* Negro elegante como la referencia */
+    background: #1a1a1a; 
     color: white;
     padding: 14px;
     border-radius: 12px;
@@ -110,7 +109,7 @@
     transform: translateY(-2px);
 }
 
-/* SOCIAL LOGIN */
+
 .social-divider {
     margin: 25px 0;
     font-size: 0.8rem;
