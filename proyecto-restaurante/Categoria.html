@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Categorías</title>
+
+    <!-- CONEXIÓN AL CSS -->
+    <link rel="stylesheet" href="css/Categoria.css">
+</head>
+<body>
+
+    
+  <aside>
+        <div class="perfil">
+            <img src="IMG/USER1.png" alt="Usuario">
+            <p>user1</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="inicio.html">🏠Inicio</a></li>
+                <li><a href="Categoria.html" class="active">📁 Categorías</a></li>
+                <li><a href="Platillo.html" >🍔 Platillos</a></li>
+                 <li><a href="Mesas.html">🪑 Mesas</a></li>
+                <li><a href="Personal.html">👥 Personal</a></li>
+                <li><a href="Cocina.html">🍳 Cocina</a></li>
+                <li><a href="#">📄 Facturas</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+
+        <header>
+            <h1>Categorías</h1>
+        </header>
+
+        
+        <!-- HERRAMIENTAS -->
+        <div class="herramientas">
+            <button id="btn-agregar-platillo" class="btn-primary" title="Agregar Platillo">+</button>
+
+            <!-- BUSCADOR -->
+            <div class="input-busqueda">
+                <span>🔍</span>
+                <input type="text" placeholder="Buscar...">
+           </div>
+              <!--AGREGAR -->
+            
+        </div>
+
+        <!-- TABLA -->
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+           <tbody>
+    <tr>
+        <td>1</td>
+        <td>Bebidas Naturales</td>
+        <td>
+            <button class="btn-edit">✏️</button>
+            <button class="btn-delete">🗑️</button>
+        </td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Bebidas Carbonatadas</td>
+        <td>
+            <button class="btn-edit">✏️</button>
+            <button class="btn-delete">🗑️</button>
+        </td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Alitas y Boneless</td>
+        <td>
+            <button class="btn-edit">✏️</button>
+            <button class="btn-delete">🗑️</button>
+        </td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Hamburguesas</td>
+        <td>
+            <button class="btn-edit">✏️</button>
+            <button class="btn-delete">🗑️</button>
+        </td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Burritos y Wraps</td>
+        <td>
+            <button class="btn-edit">✏️</button>
+            <button class="btn-delete">🗑️</button>
+        </td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>Entradas / Snacks</td>
+        <td>
+            <button class="btn-edit">✏️</button>
+            <button class="btn-delete">🗑️</button>
+        </td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>Cortes de Carne</td>
+        <td>
+            <button class="btn-edit">✏️</button>
+            <button class="btn-delete">🗑️</button>
+        </td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>Ensaladas</td>
+        <td>
+            <button class="btn-edit">✏️</button>
+            <button class="btn-delete">🗑️</button>
+        </td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>Postres</td>
+        <td>
+            <button class="btn-edit">✏️</button>
+            <button class="btn-delete">🗑️</button>
+        </td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>Guarniciones / Extras</td>
+        <td>
+            <button class="btn-edit">✏️</button>
+            <button class="btn-delete">🗑️</button>
+        </td>
+    </tr>
+
+    
+    
+</tbody>
+
+
+        </table>
+
+   <div class="paginacion">
+                <button id="btn-prev">Anterior</button>
+                <span id="info-pagina">Página 1 de 2</span>
+                <button id="btn-next">Siguiente</button>
+            </div>
+    </main>
+
+</body>
+</html>
